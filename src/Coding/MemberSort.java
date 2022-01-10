@@ -31,15 +31,11 @@ class Member{
 	public String toString() {
 		return "Member [age=" + age + ", name=" + name + "]";
 	}
-	
-	
-	
 }
 
 public class MemberSort {
 
 	public static void main(String[] args) {
-		
 		
 		List<Member> memlist = new ArrayList<>();
 		
@@ -54,7 +50,6 @@ public class MemberSort {
 		for(Member user : result) {
 			System.out.println(user);
 		}
-
 	}
 	
 	public static List<Member> Solution(List<Member> member){
@@ -65,8 +60,6 @@ public class MemberSort {
 		return member;
 		
 	}
-	
-	
 
 }
 /**
