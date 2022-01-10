@@ -40,10 +40,10 @@ public class MemberSort {
 		List<Member> memlist = new ArrayList<>();
 		
 		memlist.add(new Member(12,"park"));
-		memlist.add(new Member(15,"park"));
-		memlist.add(new Member(8,"park"));
-		memlist.add(new Member(40,"park"));
-		memlist.add(new Member(60,"park"));
+		memlist.add(new Member(15,"ball"));
+		memlist.add(new Member(8,"school"));
+		memlist.add(new Member(40,"age"));
+		memlist.add(new Member(60,"snow"));
 		
 		List<Member> result = Solution(memlist);
 		
