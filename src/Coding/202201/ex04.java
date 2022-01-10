@@ -19,8 +19,5 @@ public class ex04 {
 			System.out.println("success: " + result);
 		
 		
-		//답 : 에러 String형에 형변환 없이 Integer를 넣을 수 없음
-		
-		//이게아니면 답 :success  : 10
 	}
 }
