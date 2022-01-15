@@ -20,8 +20,6 @@
 			<property name="maxUploadSize" value="10000000" />
 	</bean>
 	
-	<!-- 예외처리를 위한 설정 -->
-
 </beans>
 
 
