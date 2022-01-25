@@ -7,7 +7,7 @@ import java.util.List;
 public class IndexOrder {
 
 	public static void main(String args[]) {
-		Integer[] age = {6,22,6};
+		Integer[] age = {0,0,0};
 		
 		int answer[] = maxIndex(age);
 			
@@ -32,18 +32,17 @@ public class IndexOrder {
 			case 2 :  
 				for(int i=1; i<3; i++) {
 					result[ageIndex] = i;
-					age[ageIndex] = 0; 
+					age[ageIndex] = -1; 
 					ageIndex = ageList.indexOf(maxNum);
 				}
 				break;
-			case 3 : 				
+			default : 				
 				for(int i=1; i<4; i++) {
 					result[ageIndex] = i;
-					age[ageIndex] = 0; 
+					age[ageIndex] = -1; 
 					ageIndex = ageList.indexOf(maxNum);
 				} 
 				break;
-			default : break;
 		}
 						
 		return result;
