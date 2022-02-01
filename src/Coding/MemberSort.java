@@ -39,11 +39,11 @@ public class MemberSort {
 		
 		List<Member> memlist = new ArrayList<>();
 		
-		memlist.add(new Member(12,"park"));
-		memlist.add(new Member(15,"ball"));
-		memlist.add(new Member(8,"school"));
-		memlist.add(new Member(40,"age"));
-		memlist.add(new Member(60,"snow"));
+		memlist.add(new Member(12, "park"));
+		memlist.add(new Member(5, "ball"));
+		memlist.add(new Member(3, "school"));
+		memlist.add(new Member(42, "age"));
+		memlist.add(new Member(10, "snow"));
 		
 		List<Member> result = Solution(memlist);
 		
