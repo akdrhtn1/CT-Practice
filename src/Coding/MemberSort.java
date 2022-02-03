@@ -54,7 +54,7 @@ public class MemberSort {
 	
 	public static List<Member> Solution(List<Member> member){
 		
-		Collections.sort(member,new CompareAgeAsc());
+		Collections.sort(member,new CompareNameAsc());
 	
 		
 		return member;
