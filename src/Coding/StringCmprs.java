@@ -6,8 +6,8 @@ public class StringCmprs {
 
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
-		String result = check(in.next());
-		System.out.println(result);
+		/*String result = check(in.next());
+		System.out.println(result); */
 		
 		String result2 = check2(in.next());
 		System.out.println(result2);
