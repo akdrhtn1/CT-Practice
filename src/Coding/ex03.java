@@ -30,7 +30,7 @@ public class ex03 {
 
 	public static void main(String[] args) {
 		Job obj = new Test("4Depth");
-		System.out.println(obj.getName("adsa"));
+		System.out.println(obj.getName());
 	}
 
 }
