@@ -12,10 +12,10 @@ public class PriorityQueue2 {
 		
 		Integer[] arr = {4,5,10,24,6,7};
 		
-		// PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder()); 내림차순
-		PriorityQueue<Integer> pq = new PriorityQueue<>();
+		 PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder()); 내림차순
+		// PriorityQueue<Integer> pq = new PriorityQueue<>();
 		
-		//List<Integer> list = Arrays.asList(arr);
+		List<Integer> list = Arrays.asList(arr);
 		
 		pq.addAll(Arrays.asList(arr));
 		
