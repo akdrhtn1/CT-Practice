@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="boardDAO">
+  	<select id="totalCount" resultType="int">
+  		SELECT COUNT(*) AS CNT
+		FROM BOARD
+	</select>
+	
+	<select id="getList" resultType="board" parameterType="map">
+		SELECT IDX,DECODE(A_ID,'ADMIN','관리자',A_ID)AS aId,TITLE,CONTENT,B_DATE AS bDate,FILE_NAME,ORI_NAME,HIT
+			 FROM(
+			    SELECT ROWNUM R_NUM, B.*
+			     FROM(
+			        SELECT * 
+			        FROM BOARD 
+			        ORDER BY IDX DESC
+			        )B
+			    ) BOARD
+			WHERE R_NUM BETWEEN #{begin} AND #{end} 
+	</select>
+	
+	<select id="selectOne" resultType="board" parameterType="int">
+		SELECT  IDX,DECODE(A_ID,'ADMIN','관리자',A_ID)AS aId,TITLE,CONTENT,B_DATE as bDate,FILE_NAME,ORI_NAME,HIT 
+		FROM BOARD
+		WHERE IDX = #{idx}
+	</select>
+  </mapper>
