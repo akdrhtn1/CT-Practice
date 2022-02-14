@@ -4,8 +4,8 @@ public class Paging {
 	private int nowPage = 1;
 	private int nowBlock = 1;
 	
-	private int numPerPage = 10;
-	private int pagePerBlock = 10;
+	private int numPerPage = 3;
+	private int pagePerBlock = 3;
 	
 	private int totalRecord = 0;
 	private int totalPage = 0;

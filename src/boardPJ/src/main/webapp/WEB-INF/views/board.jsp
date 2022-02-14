@@ -49,7 +49,8 @@
 				if(data.pvo.beginPage == 1){
 					plist += "<li class='disable'>이전으로</li>";
 				}else{
-					plist += "<li> <a href=board?cPage="+data.pvo.beginPage - 1 +">이전으로</a> </li>";
+					//plist += "<li> <a href='board?cPage="+(data.pvo.beginPage-1) +"'>이전으로</a> </li>";
+					plist += "<li> <a href='javascript:nowPage("+(data.pvo.beginPage-1)+ ");'>이전으로</a> </li>";
 				}
 	
 				for(var pageNo=data.pvo.beginPage; pageNo<=data.pvo.endPage; pageNo++){
@@ -60,7 +61,8 @@
 					}
 				}
 				if(data.pvo.endPage < data.pvo.totalPage){
-					plist += "<li><a href='board?cPage="+data.pvo.endPage + 1+ "'>다음으로</a></li>"
+					//plist += "<li><a href='board?cPage="+ (data.pvo.endPage+1) +"'>다음으로</a></li>"
+					plist += "<li><a href='javascript:nowPage("+(data.pvo.endPage+1) +");'>다음으로</a></li>"
 				}else{
 					plist += "<li class='disable'>다음으로</li>"
 				}
