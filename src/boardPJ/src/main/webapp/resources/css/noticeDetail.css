@@ -6,7 +6,7 @@
     font-weight: 400;
     color: #333;
 }
-/*공통 부분 */
+
 *{
     box-sizing: border-box;
 }
@@ -98,13 +98,13 @@ hr{
     border-radius: 5px;
     outline: none;
     box-sizing: border-box;
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075); /* .75 아니고 .075 주의 */
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075); /* .75 �븘�땲怨� .075 二쇱쓽 */
   }
   .input--text:focus {
-    border-color: #51a7e8 !important; /* header #search 선택자를 덮어쓰기 위해서 사용 */
+    border-color: #51a7e8 !important; /* header #search �꽑�깮�옄瑜� �뜮�뼱�벐湲� �쐞�빐�꽌 �궗�슜 */
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075), 0 0 5px rgba(81, 167, 232, .5);
   }
-  /* Vendor prefix(브라우저 업체별 접두어) */
+
   .input--text::-webkit-input-placeholder { color: #cacaca; }
   .input--text:-ms-input-placeholder      { color: #cacaca; }
   .input--text::-moz-placeholder          { color: #cacaca; }
@@ -112,8 +112,6 @@ hr{
 
 
 
-
-/*헤더 부분 */
 .container--header{
     background: #f5f6f7;
     width: 100%;
@@ -187,7 +185,7 @@ hr{
 }
 
 
-/* 메인 부분 */
+
 
 main .copntainer--main{
     max-width: 1180px;

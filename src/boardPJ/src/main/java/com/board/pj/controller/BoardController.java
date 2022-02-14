@@ -1,8 +1,11 @@
 package com.board.pj.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -37,5 +40,20 @@ public class BoardController {
 		model.addAttribute("dvo",boardOne);
 		
 		return "boardDetail";
+	}
+	
+	@ResponseBody
+	@GetMapping("/board/{cPage}")
+	public ResponseEntity<Map> boardCheck(@PathVariable int cPage){
+		
+		Paging page = boardService.getPage(cPage);
+		List<BoardVO> list = boardService.boardList(page);
+		
+		Map<String,Object> paging = new HashMap<>();
+		paging.put("pvo", page);
+		paging.put("boardList",list);
+		
+		return ResponseEntity.ok().body(paging);
+		
 	}
 }

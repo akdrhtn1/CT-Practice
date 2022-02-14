@@ -19,31 +19,22 @@ public class BoardService {
 		
 		Paging p = new Paging();
 
-
 		p.setTotalRecord(BoardDAO.getTotalCount()); 
 		p.setTotalPage();
 
-		
-
 		p.setNowPage(cPage);
 		
-
-
 		p.setEnd(p.getNowPage() * p.getNumPerPage()); 
 		p.setBegin(p.getEnd() - p.getNumPerPage() + 1);
 		
-
 		if (p.getEnd() > p.getTotalRecord()) {
 			p.setEnd(p.getTotalRecord());
 		}
 		
-
 		int nowPage = p.getNowPage();
 		int beginPage = (nowPage - 1) / p.getPagePerBlock() * p.getPagePerBlock() + 1;
 		p.setBeginPage(beginPage);
 		p.setEndPage(p.getBeginPage() + p.getPagePerBlock() - 1);
-
-		
 
 		if (p.getEndPage() > p.getTotalPage()) {
 			p.setEndPage(p.getTotalPage());

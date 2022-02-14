@@ -20,7 +20,57 @@
 
 	<script>
 		function nowPage(page){
-			alert(page);
+			 const boardlist = document.querySelector('tbody');
+			 const paginglist = document.querySelector('tfoot');
+			 
+			 let blist = "";
+			 let plist = "";
+			 
+		return fetch("http://localhost:8080/pj/board/"+page,{
+				method : "GET",
+			
+			}).then((response) => response.json())
+			 //.then((data) => console.log(data.boardList[0].idx))	
+				
+			.then((data) => {
+				//test.innerHTML = data.boardList
+				for(let vo of data.boardList){
+						blist += "<tr>";
+						blist += "<td class='subject'><a href=boardDetail?idx="+vo.idx+"&cPage="+data.pvo.nowPage+">"+vo.title +"</a></td>";
+						blist += "<td class='admin_id'>"+vo.aId+"</td>";
+						blist += "<td class='regDate'>"+vo.bDate.substring(0,10)+"</td>"
+						blist += "<td class='hit'>" +vo.hit+ "</td>";
+						blist += "</tr>";
+				}
+				
+				plist += "<tr>";
+				plist += "<td colspan='3' class='main-paging'>";
+				plist += "<ol class='paging clearfix'>";
+				if(data.pvo.beginPage == 1){
+					plist += "<li class='disable'>이전으로</li>";
+				}else{
+					plist += "<li> <a href=board?cPage="+data.pvo.beginPage - 1 +">이전으로</a> </li>";
+				}
+	
+				for(var pageNo=data.pvo.beginPage; pageNo<=data.pvo.endPage; pageNo++){
+					if(pageNo == data.pvo.nowPage){
+						plist += "<li class='now'>"+pageNo +"</li>";
+					}else{
+						plist += "<li><a href='javascript:nowPage("+pageNo +");'>"+pageNo +"</a></li>"; 
+					}
+				}
+				if(data.pvo.endPage < data.pvo.totalPage){
+					plist += "<li><a href='board?cPage="+data.pvo.endPage + 1+ "'>다음으로</a></li>"
+				}else{
+					plist += "<li class='disable'>다음으로</li>"
+				}
+				plist +="</ol> </td> </tr>"
+				
+				boardlist.innerHTML = blist;
+				paginglist.innerHTML = plist;
+			})	
+			
+			 
 		}
 	</script>
 <body>
@@ -91,7 +141,7 @@
 								 </c:if>
                             
                             </tbody>
-                            
+
 
                             <tfoot>
                     
